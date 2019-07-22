@@ -1,4 +1,4 @@
-package controller
+package homecontroller
 
 import "github.com/gin-gonic/gin"
 
