@@ -2,6 +2,6 @@ package model
 
 import "github.com/jinzhu/gorm"
 
-type Tag struct {
+type User struct {
 	gorm.DB
 }
