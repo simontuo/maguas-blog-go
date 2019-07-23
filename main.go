@@ -2,12 +2,12 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"maguas-blog/controller/articlecontroller"
-	"maguas-blog/controller/commentcontroller"
-	"maguas-blog/controller/homecontroller"
-	"maguas-blog/controller/tagcontroller"
-	"maguas-blog/controller/usercontroller"
-	"maguas-blog/middleware"
+	"maguas-blog-go/controller/articlecontroller"
+	"maguas-blog-go/controller/commentcontroller"
+	"maguas-blog-go/controller/homecontroller"
+	"maguas-blog-go/controller/tagcontroller"
+	"maguas-blog-go/controller/usercontroller"
+	"maguas-blog-go/middleware"
 )
 
 func main() {
