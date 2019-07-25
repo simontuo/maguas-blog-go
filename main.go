@@ -1,13 +1,13 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
 	"maguas-blog-go/controller/articlecontroller"
 	"maguas-blog-go/controller/commentcontroller"
 	"maguas-blog-go/controller/homecontroller"
 	"maguas-blog-go/controller/tagcontroller"
 	"maguas-blog-go/controller/usercontroller"
-	"maguas-blog-go/middleware"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
@@ -20,7 +20,7 @@ func main() {
 	r.GET("/tags", tagcontroller.Search)
 
 	// 加载验证中间件
-	r.Use(middleware.Auth())
+	//r.Use(middleware.Auth())
 	// 用户接口
 	r.GET("/users", usercontroller.Search)
 	r.GET("/users/:user", usercontroller.Show)

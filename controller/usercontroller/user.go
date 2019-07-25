@@ -1,15 +1,28 @@
 package usercontroller
 
-import "github.com/gin-gonic/gin"
+import (
+	"maguas-blog-go/database"
+	"maguas-blog-go/model"
 
-func Search(c *gin.Contexts)  {
+	"github.com/gin-gonic/gin"
+)
+
+func Search(c *gin.Context) {
+	db, _ := database.Connect()
+	defer db.Close()
+
+	var user model.User
+	db.Preload("Articles.Comments").First(&user)
+
+	c.JSON(200, gin.H{
+		"user": user,
+	})
+}
+
+func Show(c *gin.Context) {
 
 }
 
-func Show(c *gin.Context)  {
-
-}
-
-func Update(c *gin.Context)  {
+func Update(c *gin.Context) {
 
 }
