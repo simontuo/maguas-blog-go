@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaa9a15f-5436-4453-8ef9-3d246a3abcee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/database/connetor.go" beforeDir="false" afterPath="$PROJECT_DIR$/database/connetor.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/drop/drop.go" beforeDir="false" afterPath="$PROJECT_DIR$/database/drop/drop.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrate/migrate.go" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrate/migrate.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/article.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/article.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/comment.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/comment.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/tag.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/tag.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrate/migrate.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="33" column="44" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="44" />
+            <state relative-caret-position="755">
+              <caret line="32" column="26" lean-forward="true" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
               <folding>
                 <element signature="e#14#128#0" expanded="true" />
               </folding>
@@ -93,8 +87,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/drop/drop.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+            <state relative-caret-position="390">
+              <caret line="59" column="65" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
               <folding>
                 <element signature="e#14#75#0" expanded="true" />
               </folding>
@@ -444,8 +438,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrate/migrate.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="33" column="44" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="44" />
+        <state relative-caret-position="755">
+          <caret line="32" column="26" lean-forward="true" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
           <folding>
             <element signature="e#14#128#0" expanded="true" />
           </folding>
@@ -454,8 +448,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/drop/drop.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        <state relative-caret-position="390">
+          <caret line="59" column="65" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
           <folding>
             <element signature="e#14#75#0" expanded="true" />
           </folding>

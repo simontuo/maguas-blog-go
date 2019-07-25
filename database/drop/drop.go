@@ -57,7 +57,7 @@ func DropAll(db *gorm.DB, dropTables []interface{}) {
 			db.DropTable(table)
 
 			if !db.HasTable(table) {
-				fmt.Printf("table %v drop successed\n", table)
+				fmt.Printf("table %v drop successed\n", tableName)
 			}
 		} else {
 			fmt.Printf("table %v inexistence\n", tableName)
