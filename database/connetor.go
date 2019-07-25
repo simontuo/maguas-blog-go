@@ -5,6 +5,7 @@ import (
 	"maguas-blog-go/config"
 
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
 func Connect() (db *gorm.DB, err error) {
