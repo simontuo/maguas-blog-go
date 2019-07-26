@@ -1,6 +1,8 @@
 package model
 
-import "github.com/jinzhu/gorm"
+import (
+	"github.com/jinzhu/gorm"
+)
 
 type User struct {
 	gorm.Model
@@ -14,4 +16,8 @@ type User struct {
 	Articles []Article
 	// many-to-many
 	Likes []Article `gorm:"many2many:article_user;"`
+}
+
+func (u *User) Verify() (err error) {
+	return nil
 }

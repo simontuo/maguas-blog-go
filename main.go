@@ -23,8 +23,10 @@ func main() {
 	//r.Use(middleware.Auth())
 	// 用户接口
 	r.GET("/users", usercontroller.Search)
+	r.POST("/users", usercontroller.Create)
 	r.GET("/users/:user", usercontroller.Show)
 	r.PUT("/users/:user/update", usercontroller.Update)
+	r.DELETE("/users/:user", usercontroller.Delete)
 	// 文章接口
 	r.PUT("/articles/:article", articlecontroller.Update)
 	r.DELETE("/articles/:article", articlecontroller.Delete)
