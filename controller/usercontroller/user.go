@@ -25,7 +25,7 @@ func Show(c *gin.Context) {
 	defer db.Close()
 
 	var user model.User
-	db.Debug().Where("id = ?", c.Param("user")).First(&user)
+	db.Where("id = ?", c.Param("user")).First(&user)
 
 	c.JSON(http.StatusOK, gin.H{
 		"user": user,
@@ -90,7 +90,7 @@ func Create(c *gin.Context) {
 
 	} else {
 		c.JSON(http.StatusForbidden, gin.H{
-			"message": "该用户数据已存在。",
+			"message": "this user already exist",
 		})
 	}
 }

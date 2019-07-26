@@ -6,6 +6,7 @@ import (
 	"maguas-blog-go/controller/homecontroller"
 	"maguas-blog-go/controller/tagcontroller"
 	"maguas-blog-go/controller/usercontroller"
+	"maguas-blog-go/middleware/jwt"
 
 	"github.com/gin-gonic/gin"
 )
@@ -19,8 +20,8 @@ func main() {
 	r.GET("/comments", commentcontroller.Search)
 	r.GET("/tags", tagcontroller.Search)
 
-	// 加载验证中间件
-	//r.Use(middleware.Auth())
+	// 加载jwt中间件
+	r.Use(jwt.JWTAuth())
 	// 用户接口
 	r.GET("/users", usercontroller.Search)
 	r.POST("/users", usercontroller.Create)
