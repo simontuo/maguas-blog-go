@@ -9,4 +9,7 @@ const (
 	DatabaseUser     = "root"
 	DatabasePassword = "root"
 	DatabaseName     = "maguas-blog-go"
+
+	// jwt
+	TokenKey = "simontuo"
 )

@@ -5,6 +5,7 @@ import (
 	"maguas-blog-go/controller/commentcontroller"
 	"maguas-blog-go/controller/homecontroller"
 	"maguas-blog-go/controller/tagcontroller"
+	"maguas-blog-go/controller/tokencontroller"
 	"maguas-blog-go/controller/usercontroller"
 	"maguas-blog-go/middleware/jwt"
 
@@ -13,6 +14,9 @@ import (
 
 func main() {
 	r := gin.Default()
+	// 获取token接口
+	r.GET("/token", tokencontroller.GenerateToken)
+	r.GET("/token/refresh", tokencontroller.RefreshToken)
 	// 非验证接口
 	r.GET("/", homecontroller.Index)
 	r.GET("/articles", articlecontroller.Search)
