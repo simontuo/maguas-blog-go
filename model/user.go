@@ -17,7 +17,3 @@ type User struct {
 	// many-to-many
 	Likes []Article `gorm:"many2many:article_user;"`
 }
-
-func (u *User) Verify() (err error) {
-	return nil
-}

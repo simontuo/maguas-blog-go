@@ -46,22 +46,22 @@ func UserUpdate(c *gin.Context) {
 		Password: c.PostForm("password"),
 	}).RowsAffected
 
-	if row > 0 {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "update success",
-		})
-	} else {
+	if row < 1 {
 		c.JSON(http.StatusInternalServerError, gin.H{
-			"message": "update fail",
+			"msg": "update fail",
 		})
+		return
 	}
 
+	c.JSON(http.StatusOK, gin.H{
+		"msg": "update success",
+	})
 }
 
 func UserCreate(c *gin.Context) {
 	var postData validation.User
 	if err := c.ShouldBind(&postData); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"mag": err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"msg": err.Error()})
 		return
 	}
 
@@ -76,31 +76,24 @@ func UserCreate(c *gin.Context) {
 		Password: c.PostForm("password"),
 	}
 
-	err := user.Verify()
-	if err != nil {
-		c.JSON(http.StatusForbidden, gin.H{
-			"message": err,
-		})
-	}
-
 	if db.NewRecord(user) {
 		db.Create(&user)
 
 		if db.NewRecord(user) {
 			c.JSON(http.StatusInternalServerError, gin.H{
-				"message": "create fail",
+				"msg": "create fail",
 			})
 			return
 		}
 
 		c.JSON(http.StatusOK, gin.H{
-			"message": "create success",
+			"msg": "create success",
 		})
 		return
 	}
 
 	c.JSON(http.StatusForbidden, gin.H{
-		"message": "this user already exist",
+		"msg": "this user already exist",
 	})
 }
 
@@ -111,13 +104,14 @@ func UserDelete(c *gin.Context) {
 	var user model.User
 	row := db.Where("id = ?", c.Param("user")).Delete(&user).RowsAffected
 
-	if row > 0 {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "delete success",
-		})
-	} else {
+	if row < 1 {
 		c.JSON(http.StatusInternalServerError, gin.H{
-			"message": "delete fail",
+			"msg": "delete fail",
 		})
+		return
 	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"msg": "delete success",
+	})
 }
