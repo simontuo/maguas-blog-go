@@ -3,6 +3,7 @@ package controller
 import (
 	"maguas-blog-go/database"
 	"maguas-blog-go/model"
+	"maguas-blog-go/validation"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -58,6 +59,12 @@ func UserUpdate(c *gin.Context) {
 }
 
 func UserCreate(c *gin.Context) {
+	var postData validation.User
+	if err := c.ShouldBind(&postData); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"mag": err.Error()})
+		return
+	}
+
 	db, _ := database.Connect()
 	defer db.Close()
 
@@ -83,17 +90,18 @@ func UserCreate(c *gin.Context) {
 			c.JSON(http.StatusInternalServerError, gin.H{
 				"message": "create fail",
 			})
-		} else {
-			c.JSON(http.StatusOK, gin.H{
-				"message": "create success",
-			})
+			return
 		}
 
-	} else {
-		c.JSON(http.StatusForbidden, gin.H{
-			"message": "this user already exist",
+		c.JSON(http.StatusOK, gin.H{
+			"message": "create success",
 		})
+		return
 	}
+
+	c.JSON(http.StatusForbidden, gin.H{
+		"message": "this user already exist",
+	})
 }
 
 func UserDelete(c *gin.Context) {
