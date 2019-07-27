@@ -1,4 +1,4 @@
-package usercontroller
+package controller
 
 import (
 	"maguas-blog-go/database"
@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Search(c *gin.Context) {
+func UserSearch(c *gin.Context) {
 	db, _ := database.Connect()
 	defer db.Close()
 
@@ -20,7 +20,7 @@ func Search(c *gin.Context) {
 	})
 }
 
-func Show(c *gin.Context) {
+func UserShow(c *gin.Context) {
 	db, _ := database.Connect()
 	defer db.Close()
 
@@ -32,7 +32,7 @@ func Show(c *gin.Context) {
 	})
 }
 
-func Update(c *gin.Context) {
+func UserUpdate(c *gin.Context) {
 	db, _ := database.Connect()
 	defer db.Close()
 
@@ -42,6 +42,7 @@ func Update(c *gin.Context) {
 		Phone:  c.PostForm("phone"),
 		Email:  c.PostForm("email"),
 		Avatar: c.PostForm("avatar"),
+		Password: c.PostForm("password"),
 	}).RowsAffected
 
 	if row > 0 {
@@ -56,7 +57,7 @@ func Update(c *gin.Context) {
 
 }
 
-func Create(c *gin.Context) {
+func UserCreate(c *gin.Context) {
 	db, _ := database.Connect()
 	defer db.Close()
 
@@ -95,7 +96,7 @@ func Create(c *gin.Context) {
 	}
 }
 
-func Delete(c *gin.Context) {
+func UserDelete(c *gin.Context) {
 	db, _ := database.Connect()
 	defer db.Close()
 
