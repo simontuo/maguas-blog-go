@@ -1,6 +1,7 @@
 package config
 
 const (
+	// 服务端口
 	Port = 8080
 
 	// 数据库参数

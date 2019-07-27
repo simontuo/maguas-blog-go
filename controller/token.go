@@ -1,4 +1,4 @@
-package tokencontroller
+package controller
 
 import (
 	"log"

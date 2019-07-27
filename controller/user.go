@@ -1,14 +1,15 @@
-package usercontroller
+package controller
 
 import (
 	"maguas-blog-go/database"
 	"maguas-blog-go/model"
+	"maguas-blog-go/validation"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
-func Search(c *gin.Context) {
+func UserSearch(c *gin.Context) {
 	db, _ := database.Connect()
 	defer db.Close()
 
@@ -20,7 +21,7 @@ func Search(c *gin.Context) {
 	})
 }
 
-func Show(c *gin.Context) {
+func UserShow(c *gin.Context) {
 	db, _ := database.Connect()
 	defer db.Close()
 
@@ -32,7 +33,7 @@ func Show(c *gin.Context) {
 	})
 }
 
-func Update(c *gin.Context) {
+func UserUpdate(c *gin.Context) {
 	db, _ := database.Connect()
 	defer db.Close()
 
@@ -42,21 +43,28 @@ func Update(c *gin.Context) {
 		Phone:  c.PostForm("phone"),
 		Email:  c.PostForm("email"),
 		Avatar: c.PostForm("avatar"),
+		Password: c.PostForm("password"),
 	}).RowsAffected
 
-	if row > 0 {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "update success",
-		})
-	} else {
+	if row < 1 {
 		c.JSON(http.StatusInternalServerError, gin.H{
-			"message": "update fail",
+			"msg": "update fail",
 		})
+		return
 	}
 
+	c.JSON(http.StatusOK, gin.H{
+		"msg": "update success",
+	})
 }
 
-func Create(c *gin.Context) {
+func UserCreate(c *gin.Context) {
+	var postData validation.User
+	if err := c.ShouldBind(&postData); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"msg": err.Error()})
+		return
+	}
+
 	db, _ := database.Connect()
 	defer db.Close()
 
@@ -68,47 +76,42 @@ func Create(c *gin.Context) {
 		Password: c.PostForm("password"),
 	}
 
-	err := user.Verify()
-	if err != nil {
-		c.JSON(http.StatusForbidden, gin.H{
-			"message": err,
-		})
-	}
-
 	if db.NewRecord(user) {
 		db.Create(&user)
 
 		if db.NewRecord(user) {
 			c.JSON(http.StatusInternalServerError, gin.H{
-				"message": "create fail",
+				"msg": "create fail",
 			})
-		} else {
-			c.JSON(http.StatusOK, gin.H{
-				"message": "create success",
-			})
+			return
 		}
 
-	} else {
-		c.JSON(http.StatusForbidden, gin.H{
-			"message": "this user already exist",
+		c.JSON(http.StatusOK, gin.H{
+			"msg": "create success",
 		})
+		return
 	}
+
+	c.JSON(http.StatusForbidden, gin.H{
+		"msg": "this user already exist",
+	})
 }
 
-func Delete(c *gin.Context) {
+func UserDelete(c *gin.Context) {
 	db, _ := database.Connect()
 	defer db.Close()
 
 	var user model.User
 	row := db.Where("id = ?", c.Param("user")).Delete(&user).RowsAffected
 
-	if row > 0 {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "delete success",
-		})
-	} else {
+	if row < 1 {
 		c.JSON(http.StatusInternalServerError, gin.H{
-			"message": "delete fail",
+			"msg": "delete fail",
 		})
+		return
 	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"msg": "delete success",
+	})
 }
