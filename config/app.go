@@ -13,4 +13,7 @@ const (
 
 	// jwt
 	TokenKey = "simontuo"
+
+	// log
+	LogFilePath = "./log/data"
 )
