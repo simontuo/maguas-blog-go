@@ -1,17 +1,23 @@
 package log
 
 import (
-	"github.com/gin-gonic/gin"
 	"io"
 	"maguas-blog-go/config"
 	"os"
 	"time"
+
+	"github.com/gin-gonic/gin"
 )
 
-func Log()  {
+func Log() {
 	gin.DisableConsoleColor()
 
-	fileName := CreateDateFileName()
+	var fileName string
+	if config.LogDaily {
+		fileName = CreateDateFileName() + ".log"
+	} else {
+		fileName = "log.log"
+	}
 	f, _ := os.Create(fileName)
 	gin.DefaultWriter = io.MultiWriter(f, os.Stdout)
 }
@@ -20,5 +26,5 @@ func CreateDateFileName() string {
 	logFilePath := config.LogFilePath
 	fileName := time.Now().Format("20060102")
 
-	return logFilePath + "/" +fileName + ".log"
+	return logFilePath + "/" + fileName
 }

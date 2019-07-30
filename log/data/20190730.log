@@ -1,0 +1,31 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /v1/token                 --> maguas-blog-go/controller.GenerateToken (3 handlers)
+[GIN-debug] GET    /v1/token/refresh         --> maguas-blog-go/controller.RefreshToken (3 handlers)
+[GIN-debug] GET    /v1/                      --> maguas-blog-go/controller.Index (3 handlers)
+[GIN-debug] GET    /v1/articles              --> maguas-blog-go/controller.ArticleSearch (3 handlers)
+[GIN-debug] GET    /v1/articles/:article     --> maguas-blog-go/controller.ArticleShow (3 handlers)
+[GIN-debug] GET    /v1/comments              --> maguas-blog-go/controller.CommentSearch (3 handlers)
+[GIN-debug] GET    /v1/tags                  --> maguas-blog-go/controller.TagSearch (3 handlers)
+[GIN-debug] GET    /v1/users                 --> maguas-blog-go/controller.UserSearch (4 handlers)
+[GIN-debug] POST   /v1/users                 --> maguas-blog-go/controller.UserCreate (4 handlers)
+[GIN-debug] GET    /v1/users/:user           --> maguas-blog-go/controller.UserShow (4 handlers)
+[GIN-debug] PUT    /v1/users/:user/update    --> maguas-blog-go/controller.UserUpdate (4 handlers)
+[GIN-debug] DELETE /v1/users/:user           --> maguas-blog-go/controller.UserDelete (4 handlers)
+[GIN-debug] PUT    /v1/articles/:article     --> maguas-blog-go/controller.ArticleUpdate (4 handlers)
+[GIN-debug] DELETE /v1/articles/:article     --> maguas-blog-go/controller.ArticleDelete (4 handlers)
+[GIN-debug] POST   /v1/articles/:article/like --> maguas-blog-go/controller.ArticleLike (4 handlers)
+[GIN-debug] POST   /v1/articles/:article/collect --> maguas-blog-go/controller.ArticleCollect (4 handlers)
+[GIN-debug] POST   /v1/articles/:article/comment --> maguas-blog-go/controller.ArticleComment (4 handlers)
+[GIN-debug] PUT    /v1/comments/:comment     --> maguas-blog-go/controller.CommentUpdate (4 handlers)
+[GIN-debug] DELETE /v1/comments/:comment     --> maguas-blog-go/controller.CommentDelete (4 handlers)
+[GIN-debug] POST   /v1/comments/:comment/like --> maguas-blog-go/controller.CommentLike (4 handlers)
+[GIN-debug] POST   /v1/comments/:comment/reply --> maguas-blog-go/controller.CommentReply (4 handlers)
+[GIN-debug] POST   /v1/tags/tag/:model       --> maguas-blog-go/controller.TagTag (4 handlers)
+[GIN-debug] PUT    /v1/tags/:tag             --> maguas-blog-go/controller.TagUpdate (4 handlers)
+[GIN-debug] DELETE /v1/tags/:tag             --> maguas-blog-go/controller.TagDelete (4 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
