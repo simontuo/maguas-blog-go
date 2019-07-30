@@ -17,9 +17,11 @@ type JWT struct {
 
 // 载荷，可以自定义需要的信息
 type CustomClaims struct {
-	ID    uint   `json:"id"`
-	Name  string `json:"name"`
-	Phone string `json:"phone"`
+	// 自定义信息
+	//ID    string `json:"userId"`
+	//Name  string `json:"name"`
+	//Phone string `json:"phone"`
+	// jwt默认信息
 	jwt.StandardClaims
 }
 

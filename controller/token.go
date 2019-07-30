@@ -3,9 +3,7 @@ package controller
 import (
 	"log"
 	"maguas-blog-go/config"
-	"maguas-blog-go/database"
 	jwt2 "maguas-blog-go/middleware/jwt"
-	"maguas-blog-go/model"
 	"net/http"
 	"time"
 
@@ -18,15 +16,7 @@ func GenerateToken(c *gin.Context) {
 		[]byte(config.TokenKey),
 	}
 
-	db, _ := database.Connect()
-	defer db.Close()
-	var user model.User
-	db.First(&user)
-
 	claims := jwt2.CustomClaims{
-		user.ID,
-		user.Name,
-		user.Phone,
 		jwt.StandardClaims{
 			NotBefore: int64(time.Now().Unix() - 1000), // 签名生效时间
 			ExpiresAt: int64(time.Now().Unix() + 3600), // 过期时间一小时
