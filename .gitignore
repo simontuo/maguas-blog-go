@@ -17,6 +17,7 @@
 # vendor/
 
 # Log
-/log/data/*.log
+/log/data/*
+/log/action/*
 
 .DS_Store
