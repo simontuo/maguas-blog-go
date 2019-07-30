@@ -15,6 +15,8 @@ const (
 	TokenKey = "simontuo"
 
 	// log
-	LogDaily    = true
-	LogFilePath = "./log/data"
+	LogDaily          = true
+	LogFilePath       = "./log/data"
+	ActionLog         = false
+	ActionLogFilePaTH = "./log/action"
 )

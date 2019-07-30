@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="eaa9a15f-5436-4453-8ef9-3d246a3abcee" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="eaa9a15f-5436-4453-8ef9-3d246a3abcee" name="Default Changelist" comment="">
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/jwt/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/jwt/jwt.go" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
+>>>>>>> 3d99ac74e913c18ec23495409695f6967c47ad3a
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/tag.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/tag.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validation/validation.go" beforeDir="false" afterPath="$PROJECT_DIR$/validation/validation.go" afterDir="false" />
+>>>>>>> 07f94ea0bc436121e7b9cb40b74776aaadf98ab7
+    </list>
+>>>>>>> 6a16409c9369041fcdbdfabb35403120cedd6cc9
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,12 +27,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="486">
+              <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
+=======
+            <state relative-caret-position="360">
+              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+>>>>>>> 3d99ac74e913c18ec23495409695f6967c47ad3a
+=======
     <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="313">
               <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+>>>>>>> 07f94ea0bc436121e7b9cb40b74776aaadf98ab7
               <folding>
                 <element signature="e#14#131#0" expanded="true" />
               </folding>
@@ -41,6 +73,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+=======
+        <entry file="file://$PROJECT_DIR$/controller/token.go">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <state relative-caret-position="117">
+              <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
+=======
+            <state relative-caret-position="480">
+              <caret line="70" column="12" selection-start-line="70" selection-start-column="10" selection-end-line="70" selection-end-column="12" />
+>>>>>>> 3d99ac74e913c18ec23495409695f6967c47ad3a
+=======
+            <state relative-caret-position="360">
+              <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+>>>>>>> 07f94ea0bc436121e7b9cb40b74776aaadf98ab7
+              <folding>
+                <element signature="e#20#231#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+>>>>>>> 6a16409c9369041fcdbdfabb35403120cedd6cc9
         <entry file="file://$PROJECT_DIR$/log/data/20190730.log">
           <provider selected="true" editor-type-id="LogFileEditorProvider">
             <state relative-caret-position="-651" />
@@ -244,10 +301,24 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27045178" />
+=======
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
+<<<<<<< HEAD
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23541667" />
+>>>>>>> 3d99ac74e913c18ec23495409695f6967c47ad3a
+=======
       <window_info id="Favorites" side_tool="true" />
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+>>>>>>> 07f94ea0bc436121e7b9cb40b74776aaadf98ab7
+>>>>>>> 6a16409c9369041fcdbdfabb35403120cedd6cc9
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -256,8 +327,21 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3397762" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23746161" />
+=======
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3234995" />
+>>>>>>> 3d99ac74e913c18ec23495409695f6967c47ad3a
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+=======
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3397762" />
+>>>>>>> 6a16409c9369041fcdbdfabb35403120cedd6cc9
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39979655" />
+>>>>>>> 07f94ea0bc436121e7b9cb40b74776aaadf98ab7
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -412,13 +496,46 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/../github.com/gin-gonic/gin/context.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="658" column="18" selection-start-line="658" selection-start-column="18" selection-end-line="658" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/config/app.go">
+=======
+    <entry file="file://$PROJECT_DIR$/validation/validation.go">
+=======
+    <entry file="file://$PROJECT_DIR$/config/app.go">
+>>>>>>> 07f94ea0bc436121e7b9cb40b74776aaadf98ab7
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/controller/user.go">
+>>>>>>> 3d99ac74e913c18ec23495409695f6967c47ad3a
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#20#122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+=======
+    <entry file="file://$PROJECT_DIR$/model/comment.go">
+      <provider selected="true" editor-type-id="text-editor" />
+>>>>>>> 07f94ea0bc436121e7b9cb40b74776aaadf98ab7
+    </entry>
+>>>>>>> 6a16409c9369041fcdbdfabb35403120cedd6cc9
     <entry file="file://$PROJECT_DIR$/model/user.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -434,8 +551,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/tag.go">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <state relative-caret-position="117">
+          <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
+=======
+        <state relative-caret-position="240">
+          <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
+>>>>>>> 3d99ac74e913c18ec23495409695f6967c47ad3a
+          <folding>
+            <element signature="e#15#51#0" expanded="true" />
+          </folding>
+=======
         <state relative-caret-position="180">
           <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+>>>>>>> 07f94ea0bc436121e7b9cb40b74776aaadf98ab7
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
+          <folding>
+            <element signature="e#14#306#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
