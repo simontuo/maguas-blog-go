@@ -13,7 +13,7 @@ func Connect() (db *gorm.DB, err error) {
 
 	db, err = gorm.Open("mysql", connectConfig)
 	if err != nil {
-		fmt.Print(err)
+		fmt.Print(err.Error())
 		return nil, err
 	}
 

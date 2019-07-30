@@ -6,7 +6,7 @@ import (
 
 type User struct {
 	gorm.Model
-	Name     string `gorm:"type:varchar(100);not null;unique"` // string默认长度为150
+	Name     string `gorm:"not null;unique"` // string默认长度为150
 	Phone    string `gorm:"not null;unique"`
 	Email    string `gorm:"unique"`
 	Avatar   string

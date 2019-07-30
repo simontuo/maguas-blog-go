@@ -3,9 +3,7 @@ package controller
 import (
 	"log"
 	"maguas-blog-go/config"
-	"maguas-blog-go/database"
 	jwt2 "maguas-blog-go/middleware/jwt"
-	"maguas-blog-go/model"
 	"net/http"
 	"time"
 
@@ -18,15 +16,7 @@ func GenerateToken(c *gin.Context) {
 		[]byte(config.TokenKey),
 	}
 
-	db, _ := database.Connect()
-	defer db.Close()
-	var user model.User
-	db.First(&user)
-
 	claims := jwt2.CustomClaims{
-		user.ID,
-		user.Name,
-		user.Phone,
 		jwt.StandardClaims{
 			NotBefore: int64(time.Now().Unix() - 1000), // 签名生效时间
 			ExpiresAt: int64(time.Now().Unix() + 3600), // 过期时间一小时
@@ -52,5 +42,27 @@ func GenerateToken(c *gin.Context) {
 }
 
 func RefreshToken(c *gin.Context) {
+	token := c.Request.Header.Get("token")
+	if token == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"msg": "请求没携带token,无权访问",
+		})
 
+		c.Abort()
+		return
+	}
+
+	var j jwt2.JWT
+	refreshToken, err := j.RefreshToken(token)
+	if err != nil {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"msg": err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"token": refreshToken,
+	})
+	return
 }

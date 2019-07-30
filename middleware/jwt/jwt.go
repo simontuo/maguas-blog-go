@@ -17,9 +17,11 @@ type JWT struct {
 
 // 载荷，可以自定义需要的信息
 type CustomClaims struct {
-	ID    uint   `json:"id"`
-	Name  string `json:"name"`
-	Phone string `json:"phone"`
+	// 自定义信息
+	//ID    string `json:"userId"`
+	//Name  string `json:"name"`
+	//Phone string `json:"phone"`
+	// jwt默认信息
 	jwt.StandardClaims
 }
 
@@ -124,12 +126,14 @@ func (j *JWT) RefreshToken(tokenString string) (string, error) {
 	jwt.TimeFunc = func() time.Time {
 		return time.Unix(0, 0)
 	}
+
 	token, err := jwt.ParseWithClaims(tokenString, &CustomClaims{}, func(token *jwt.Token) (i interface{}, e error) {
 		return j.SigningKey, nil
 	})
 	if err != nil {
 		return "", err
 	}
+
 	if claims, ok := token.Claims.(*CustomClaims); ok && token.Valid {
 		jwt.TimeFunc = time.Now
 		claims.StandardClaims.ExpiresAt = time.Now().Add(1 * time.Hour).Unix()
