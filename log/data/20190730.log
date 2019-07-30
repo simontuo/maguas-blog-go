@@ -29,7 +29,3 @@
 [GIN-debug] PUT    /v1/tags/:tag             --> maguas-blog-go/controller.TagUpdate (4 handlers)
 [GIN-debug] DELETE /v1/tags/:tag             --> maguas-blog-go/controller.TagDelete (4 handlers)
 [GIN-debug] Listening and serving HTTP on :8080
-[GIN] 2019/07/30 - 10:00:53 | 200 |      9.9991ms |             ::1 | GET      /v1/users
-[GIN] 2019/07/30 - 10:00:55 | 200 |            0s |             ::1 | GET      /v1/token
-[GIN] 2019/07/30 - 10:01:03 | 200 |      8.0008ms |             ::1 | GET      /v1/users
-[GIN] 2019/07/30 - 10:01:04 | 200 |     10.0014ms |             ::1 | GET      /v1/users
