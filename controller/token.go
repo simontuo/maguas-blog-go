@@ -52,5 +52,27 @@ func GenerateToken(c *gin.Context) {
 }
 
 func RefreshToken(c *gin.Context) {
+	token := c.Request.Header.Get("token")
+	if token == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"msg": "请求没携带token,无权访问",
+		})
 
+		c.Abort()
+		return
+	}
+
+	var j jwt2.JWT
+	refreshToken, err := j.RefreshToken(token)
+	if err != nil {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"msg": err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"token": refreshToken,
+	})
+	return
 }
